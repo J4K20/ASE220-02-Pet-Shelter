@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Pricing Table | Themesdesign</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Premium Bootstrap 5 Landing Page Template" />
+		<meta name="keywords" content="bootstrap 5, premium, marketing, multipurpose" />
+		<meta content="" name="Themesdesign" />
+
+		<!-- bootstrap -->>
+
+		<!-- AwesomeFont icons  -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!--custom css-->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<style>
+			h1.head {
+				font-size:10em;
+				font-weight: 750;
+			}
+		</style>
+	</head>
+
+	<body style="background-color: #2e3c45">
+		<div style="text-align:center; color:white; padding:5em">
+			<h1 class="head p-3"><a href="pet_shelter_p2 - Copy.html" style="color:white">Pet Shelter</a></h1>
+			<p class="fs-3 p-3">Click on the pet you're interested in for more detailed information</p>
+			<p class="fs-4"><span class="badge rounded-circle p-2 male" style="color:lightblue;background-color:lightblue">|||</span> Indicates a male pet <span style="visibility:hidden">_______</span> <span class="badge rounded-circle p-2 female" style="color:hotpink;background-color:hotpink">|||</span> Indicates a female pet</p>
+		</div>
+
+		<!--start pricing-->
+		<section class="bg-pricing-1">
+			<div class="bg-overlay"></div>
+			<div class="container">
+				<div class="row justify-content-center" id="cardRow">
+					<div class="col-lg-5 mt-4 pt-2 d-none bg-dark card border-0 mx-4 py-5" id="templateDiv">
+						<button type="button" class="btn position-relative text-light" onclick="getNameIndex(this.id); setModal()" id="" data-bs-toggle="modal" data-bs-target="#templateModal">
+							<h1 class="fw-bold text-decoration-underline m-2"></h1>
+							<img src="images/whiskers.jpg" class="divImage" style="width:50%; margin:10px; border-radius:20px">
+							<ul class="fs-3 fw-medium">
+								<li class="petbreed"></li>
+								<li class="petweight"></li>
+								<li class="petpers"></li>
+								<li class="petfav"></li>
+							</ul>
+							<span class="position-absolute top-0 start-0 translate-middle p-3 border border-light rounded-circle petgender"></span>
+							<span class="position-absolute top-0 start-100 translate-end border p-1 bg-secondary border-light fs-3" style="border-radius:15px">
+								<span class="text-secondary">|<span class="text-white petage">00</span>|</span>
+							</span>
+						</button>
+						<button type="button" class="btn btn-primary btn-sm" onclick="this.parentElement.style.display = 'none';">Delete</button>
+					</div>
+				</div>
+				<div class="row justify-content-center m-4">
+					<div class="col-2" align="center" id="loadCol">
+						<button class="btn btn-lg btn-success" id="loadButton">Load More</button>
+					</div>
+					<div class="col-2" align="center">
+						<button class="btn btn-lg btn-info text-medium" id="createButton" data-bs-toggle="modal" data-bs-target="#formModal">Add Your Own!</button>
+					</div>
+				</div>
+				<div class="row justify-content-evenly" id="divlast"></div>
+			</div>
+		</section>
+		
+		<div class="modal text-light" id="templateModal" role="dialog" aria-hidden="true" tabindex="-1">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content bg-dark">
+					<div class="modal-header">
+						<h5 class="modal-title">Modal title</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body" style="align-content:center">
+						<h1 class="fw-bold text-decoration-underline m-2"> </h1>
+						<div style="width:100%; margin:auto">
+							<img src="images/whiskers.jpg" class="modalImage" style="width:50%; margin:10px; border-radius:20px">
+						</div>
+						<ul class="fs-3 fw-medium">
+							<li class="modalAge"> </li>
+							<li class="modalGender capitalize"> </li>
+							<li class="modalBreed"> </li>
+							<li class="modalWeight"> </li>
+							<li class="modalPers"> </li>
+							<li class="modalFav"> </li>
+							<li class="modalNotes"> </li>
+							<li class="modalQuirks"> </li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal" id="formModal" role="dialog" aria-hidden="true" tabindex="-1">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content bg-dark text-light">
+				  <div class="modal-header">
+					<h5 class="modal-title">Add Pet</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				  </div>
+				  <div class="modal-body">
+					<form id="createForm" class="p-3 f-1">
+						<p>Name: <input name="petname" type="text" id="petname"/></p>
+						<p>Breed: <input name="petbreed" type="text" id="petbreed"/></p>
+						<p>
+							Gender: 
+							<input name="petgender" type="radio" id="male" value="male"/>
+							<label for="male">Male</label>
+							<input name="petgender" type="radio" id="female" value="female"/>
+							<label for="male">Female</label>
+						</p>
+						<p>Age: <input name="petage" type="number" id="petage"/></p>
+						<p>Weight: <input name="petweight" type="number" id="petweight"/></p>
+						<p>Personality: <input name="petpers" type="text" id="petpers"/></p>
+						<p>Favorite Activities: <input name="petfav" type="text" id="petfav"/></p>
+						<p>Health Notes: <input name="petnotes" type="text" id="petnotes"/></p>
+						<p>Quirks: <input name="petquirks" type="text" id="petquirks"/></p>
+						<p>Image:  <input type="file" id="imageUpload" name="image" class="formImage" accept="image/*"></p>
+					</form>
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" id="formSubmit" form ="createForm" onclick="createUserDiv()" data-bs-dismiss="modal">Save</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				  </div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="https://unicons.iconscout.com/release/v3.0.6/script/monochrome/bundle.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<script>
+			var nameIndex;
+			var shown;
+			let nameList = ["Max", "Bella", "Whiskers", "Thumper", "Charlie", "Bubbles", "Daisy", "Lucy", "Luna", "Oliver", "Nemo", "Goldie", "Rocky", "Coco", "Buddy", "Chloe", "Hazel", "Shadow"];
+			let ageList = [4, 2, 3, 2, 6, 1, 3, 1, 2, 5, 2, 1, 7, 1, 5, 4, 3, 6];
+			let genderList = ["male", "female", "male", "male", "male", "male", "female", "female", "female", "male", "male", "female", "male", "female", "male", "female", "female", "male"];
+			let breedList = ["Labrador Retriever", "Golden Retriever", "Maine Coon", "Holland Lop", "Beagle", "Betta", "Cocker Spaniel", "French Bulldog", "Siamese", "British Shorthair", "Clownfish", "Goldfish", "German Shepherd", "Netherland Dwarf", "Border Collie", "Ragdoll", "Mini Rex", "Black Domestic Shorthair"];
+			let weightList = [70, 65, 18, 4, 25, 0.1, 30, 22, 10, 14, 0.6, 0.5, 85, 2.5, 40, 12, 3.5, 11];
+			let persList = ["Loyal & Playful", "Sweet & Energetic", "Gentle & Laid-back", "Curious & Mischievous", "Friendly & Food-Obsessed", "Bold & Territorial", "Affectionate & Sensitive", "Goofy & Attention-Seeking", "Talkative & Sassy", "Calm & Observant", "Social & Playful", "Graceful & Easygoing", "Protective & Smart", "Shy & Gentle", "Energetic & Intelligent", "Affectionate & Relaxed", "Independent & Clever", "Mysterious & Playful"];
+			let favList = ["Playing Fetch", "Swimming", "Lounging in the Sun", "Digging & Exploring", "Sniffing & Tracking Scents", "Flaring at His Reflection", "Cuddling with Her Favorite Human", "Zooming Around the House", "Climbing & Exploring High Places", "Watching the World from a Window", "Swimming Through Bubbles",  "Following Movements Outside the Tank", "Training & Learning Commands", "Hiding in Tunnels", "Herding Everything", "Being Carried Like a Baby", "Chewing on Cardboard", "Stalking & Pouncing on Toys"];
+			let noteList = ["Regular exercise and joint supplements can help prevent stiffness.", "Her floppy ears can trap moisture, so regular cleaning is important.", "Thick fur can mat easily, so frequent brushing is necessary.", "Needs chew toys to prevent overgrown teeth.", "Loves food, so portion control and exercise are key.", "Water should stay around 78-80°F with regular tank cleaning.", "Regular eye checks help prevent infections and cataracts.", "Short snout makes her prone to breathing issues in hot weather.", "Needs dental care and a proper diet to prevent gum disease.", "Naturally stocky, but needs exercise to stay fit.", "Sensitive to sudden water parameter changes.", "Needs at least a 20-gallon tank as she grows.", "Aging can bring mobility issues, so regular vet checkups are important.", "Needs gentle handling to prevent injuries.", "Without enough challenges, he may develop anxiety or boredom behaviors.", "Vet procedures should be carefully monitored.", "Soft bedding is necessary to protect her delicate feet.", "Needs a calm environment to avoid over-grooming or anxiety."];
+			let quirkList = ["Sleeps with a toy in his mouth", "Dunks her head underwater for fun", "Chirps at birds outside", "Spins in circles before flopping", "Steals socks and hides them", "Flares at his own reflection", "Sleeps belly-up with paws in the air", "Snores louder than a human", "Meows back when spoken to", "Refuses to drink from a water bowl", "Swims in loops before eating", "Follows fingers outside the tank", "Patrols the house before bed", "Hides in tunnels for hours", "Tries to herd other pets", "Goes limp when picked up", "Bounces sideways when excited", "Appears out of nowhere like a ninja"];
+			let srcList = ["images/max.jpg", "images/bella.jpg", "images/whiskers.jpg", "images/thumper.jpg", "images/charlie.jpg", "images/bubbles.jpg", "images/daisy.jpg", "images/lucy.jpg", "images/luna.jpg", "images/oliver.jpg", "images/nemo.jpg", "images/goldie.jpg", "images/rocky.jpg", "images/coco.jpg", "images/buddy.jpg", "images/chloe.jpg", "images/hazel.jpg", "images/shadow.jpg"];
+			
+			loadButton.onclick = function() {loadFunction()};
+			
+			function getNameIndex(buttonClicked){
+				nameIndex = nameList.indexOf(document.getElementById(buttonClicked).firstElementChild.innerText);
+			}
+			
+			function setModal(){
+				templateModal.querySelector("h1").innerText = nameList[nameIndex];
+				templateModal.querySelector(".modalAge").innerText = "Age: " + ageList[nameIndex];
+				templateModal.querySelector(".modalGender").innerText = "Gender: " + genderList[nameIndex];
+				templateModal.querySelector(".modalBreed").innerText = "Breed: " + breedList[nameIndex];
+				templateModal.querySelector(".modalWeight").innerText = "Weight: " + weightList[nameIndex] + " lbs";
+				templateModal.querySelector(".modalPers").innerText = "Personality: " + persList[nameIndex];
+				templateModal.querySelector(".modalFav").innerText = "Favorite Activities: " + favList[nameIndex];
+				templateModal.querySelector(".modalQuirks").innerText = "Quirks: " + quirkList[nameIndex];
+				templateModal.querySelector(".modalNotes").innerText = "Health Notes: " + noteList[nameIndex];
+				templateModal.querySelector(".modalImage").src = srcList[nameIndex];
+			}
+			
+			function inputToURL(inputElement) {
+				var file = inputElement.files[0];
+				return window.URL.createObjectURL(file);
+			}
+			
+			function createUserDiv(){
+				let elements = createForm.elements;
+				let template = document.getElementById("templateDiv");
+				let userDiv = template.cloneNode(true);
+				shown = shown + 1;
+				userDiv.querySelector("h1").innerText = elements.petname.value;
+				nameList.splice(shown, 0, elements.petname.value);
+				userDiv.querySelector(".petage").innerText = elements.petage.value;
+				ageList.splice(shown, 0, elements.petage.value);
+				var gender = elements.petgender.value;
+				if(gender == "male"){
+					userDiv.querySelector(".petgender").style = "background-color:lightblue";
+				}
+				else if(gender == "female"){
+					userDiv.querySelector(".petgender").style = "background-color:hotpink";
+				};
+				genderList.splice(shown, 0, elements.petgender.value);
+				userDiv.querySelector(".petbreed").innerText = elements.petbreed.value;
+				breedList.splice(shown, 0, elements.petbreed.value);
+				userDiv.querySelector(".petweight").innerText = elements.petweight.value;
+				weightList.splice(shown, 0, elements.petweight.value);
+				userDiv.querySelector(".petpers").innerText = elements.petpers.value;
+				persList.splice(shown, 0, elements.petpers.value);
+				userDiv.querySelector(".petfav").innerText = elements.petfav.value;
+				favList.splice(shown, 0, elements.petfav.value);
+				quirkList.splice(shown, 0, elements.petquirks.value);
+				noteList.splice(shown, 0, elements.petnotes.value);
+				userDiv.classList.remove("d-none");
+				userDiv.firstElementChild.id = "petButton" + shown;
+				var url = inputToURL(document.getElementById('imageUpload'));
+				userDiv.querySelector(".divImage").src = url;
+				srcList.splice(shown, 0, url);
+				cardRow.appendChild(userDiv);
+			}
+			
+			function newDiv(name, age, gender, breed, weight, pers, fav, idNum, src){
+				let template = document.getElementById("templateDiv");
+				let newDiv = template.cloneNode(true);
+				newDiv.querySelector("h1").innerText = name;
+				newDiv.querySelector(".petage").innerText = age;
+				if(gender == "male"){
+					newDiv.querySelector(".petgender").style = "background-color:lightblue";
+				}
+				else if(gender == "female"){
+					newDiv.querySelector(".petgender").style = "background-color:hotpink";
+				}
+				newDiv.querySelector(".petgender").classList.add(gender);
+				newDiv.querySelector(".petbreed").innerText ="Breed: " + breed;
+				newDiv.querySelector(".petweight").innerText ="Weight: " + weight + " lbs";
+				newDiv.querySelector(".petpers").innerText ="Personality: " + pers;
+				newDiv.querySelector(".petfav").innerText ="Favorite Activities: " + fav;
+				newDiv.querySelector(".divImage").src = src;
+				newDiv.classList.remove("d-none");
+				newDiv.firstElementChild.id = "petButton" + idNum;
+				cardRow.appendChild(newDiv);
+			}
+			
+			function loadFunction() {
+				for (let i = shown + 1; i < nameList.length; i++) {
+					shown = shown + 1;
+					newDiv(nameList[i], ageList[i], genderList[i], breedList[i], weightList[i], persList[i], favList[i], shown, srcList[i]);
+				}
+				document.getElementById("loadCol").style.display = 'none';
+			}
+			
+			for (let i = 0; i < 9; i++) {
+				newDiv(nameList[i], ageList[i], genderList[i], breedList[i], weightList[i], persList[i], favList[i], i, srcList[i]);
+				shown = i;
+			}
+		</script>	
+	</body>
+
+</html>
